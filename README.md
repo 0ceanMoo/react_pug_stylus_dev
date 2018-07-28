@@ -1,7 +1,11 @@
+開発環境（React + Stylus + Pug）
+====
+React + Stylus + Pug を使った開発環境をさっと用意したいので作った
 
-node 8.11.2
-webpack 4.16.3
+* node 8.11.2
+* webpack 4.16.3
 
+## 下準備
 ```
 yarn init -y
 mkdir assets
