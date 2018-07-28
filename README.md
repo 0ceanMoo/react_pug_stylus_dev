@@ -1,6 +1,6 @@
 開発環境（React + Stylus + Pug）
 ====
-React + Stylus + Pug を使った開発環境をさっと用意したいので作った
+React + Stylus + Pug を使った開発環境をさっと用意したいので作ってみた
 
 * node 8.11.2
 * webpack 4.16.3
@@ -15,7 +15,14 @@ yarn server
 これをベースに開発していけばいいかなぁと
 
 
-## 下準備
+環境構築メモ
+----
+いちおう開発環境の構築手順を記録しておくことにする
+
+正直、webpackは余りよく分かってないけど、  
+望み通りの動きをするものができたので良しとする
+
+### 下準備
 ```
 yarn init -y
 mkdir assets
@@ -28,7 +35,7 @@ mkdir public/js
 mkdir public/css
 ```
 
-## React
+### React
 ```
 yarn add react react-dom
 ```
@@ -52,7 +59,7 @@ render(
 );
 ```
 
-## Babel
+### Babel
 ```
 yarn add -D babel-core babel-loader babel-preset-env babel-preset-react
 ```
@@ -66,7 +73,7 @@ vi .babelrc
 }
 ```
 
-## pug
+### pug
 ```
 yarn add -D pug pug-loader
 ```
@@ -84,7 +91,7 @@ html
 
 
 
-## Webpack
+### Webpack
 ```
 yarn add -D webpack webpack-cli html-webpack-plugin
 touch webpack.config.js development.js
@@ -137,18 +144,18 @@ export default {
 }
 ```
 
-## 確認
+### 確認
 ```
 yarn webpack
 ```
 
-下記のファイルが生成されているばOK
+下記のファイルが生成されているば成功
 
 * public/index.html
 * public/js/bundle.js
 
 
-## webpack-dev-serverをインストール
+### webpack-dev-serverをインストール
 webサーバを立ち上げて動作確認しながら開発できる  
 ソースコードの更新を検知し、自動でビルドし直してくれて、ブラウザも再読み込みしてくれて便利
 
@@ -160,7 +167,7 @@ localhost:8080 でアクセスしてみると、index.pugで書いた内容とap
 
 
 
-## CSS(stylus)
+### CSS(stylus)
 CSSまわりは割と面倒
 
 ```
@@ -211,12 +218,12 @@ import ExtractTextPlugin from "extract-text-webpack-plugin" // 追記
     new HtmlWebpackPlugin({
 ```
 
-## 確認
+### 確認
 ```
 yarn webpack
 ```
 
-public/css/styles.cssが生成されてればOK
+public/css/styles.cssが生成されてれば成功
 
 ```
 vi package.json
