@@ -15,7 +15,6 @@ yarn server
 これをベースに開発していけばいいかなぁと
 
 
-
 ## 下準備
 ```
 yarn init -y
@@ -88,10 +87,10 @@ html
 ## Webpack
 ```
 yarn add -D webpack webpack-cli html-webpack-plugin
+touch webpack.config.js development.js
 ```
 
 ```
-touch webpack.config.js development.js
 vi webpack.config.js
 require('babel-core/register'); // development.jsでES6を使えるようにする
 module.exports = require('./development');
@@ -143,14 +142,14 @@ export default {
 yarn webpack
 ```
 
-↓が生成されているハズ
+下記のファイルが生成されているばOK
 
-public/index.html
-public/js/bundle.js
+* public/index.html
+* public/js/bundle.js
 
 
 ## webpack-dev-serverをインストール
-webサーバを立ち上げて動作確認しながら開発できる
+webサーバを立ち上げて動作確認しながら開発できる  
 ソースコードの更新を検知し、自動でビルドし直してくれて、ブラウザも再読み込みしてくれて便利
 
 ```
@@ -169,7 +168,7 @@ yarn add -D stylus stylus-loader style-loader css-loader
 yarn add -D extract-text-webpack-plugin@4.0.0-beta.0
 ```
 
-extract-text-webpack-plugin はCSSファイルを出力するために必要
+extract-text-webpack-plugin はCSSファイルを出力するために必要  
 @4.0.0-beta.0 はwebpack4の場合に必要（古いextract-text-webpack-pluginだと動かない）
 
 ```
@@ -234,5 +233,4 @@ yarn server
 ```
 
 h1要素が赤い文字で、p要素が大きめに表示されてたら成功
-
 
