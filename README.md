@@ -6,7 +6,7 @@ React + Stylus + Pug を使った開発環境をさっと用意したいので�
 * webpack 4.16.3
 
 ```
-git clone
+git clone https://github.com/0ceanMoo/react_pug_stylus_dev.git
 yarn install
 yarn server
 ```
