@@ -5,6 +5,17 @@ React + Stylus + Pug を使った開発環境をさっと用意したいので�
 * node 8.11.2
 * webpack 4.16.3
 
+```
+git clone
+yarn install
+yarn server
+```
+
+で、とりあえずサンプルページが表示されるから  
+これをベースに開発していけばいいかなぁと
+
+
+
 ## 下準備
 ```
 yarn init -y
