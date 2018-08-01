@@ -46,7 +46,7 @@ mkdir public/css
 
 ### React
 ```
-yarn add react react-dom
+yarn add -D react react-dom
 ```
 
 ```
@@ -103,7 +103,6 @@ html
 ### Webpack
 ```
 yarn add -D webpack webpack-cli html-webpack-plugin
-touch webpack.config.js development.js
 ```
 
 ```
@@ -135,6 +134,10 @@ export default {
         test: /\.js(x?)$/,
         exclude: /node_modules/,
         loader: 'babel-loader'
+      },
+      {
+        test: /\.pug$/,
+        loader: 'pug-loader'
       }
     ]
   },
@@ -158,10 +161,22 @@ export default {
 yarn webpack
 ```
 
-下記のファイルが生成されているば成功
+下記のファイルが生成されていれば成功
 
 * public/index.html
 * public/js/bundle.js
+
+スクリプトとして登録
+
+```
+vi package.json
+
+  // 追記
+  },
+  "scripts": {
+    "build": "webpack"
+  }
+```
 
 
 ### webpack-dev-serverをインストール
@@ -237,9 +252,9 @@ public/css/styles.cssが生成されてれば成功
 ```
 vi package.json
 
-  // 追記
-  },
   "scripts": {
+    "build": "webpack"
+    // 下記を追記
     "server": "webpack-dev-server"
   }
 ```
