@@ -166,7 +166,24 @@ yarn webpack
 * public/index.html
 * public/js/bundle.js
 
-スクリプトとして登録
+
+### webpack-dev-serverをインストール
+```
+yarn add -D webpack-dev-server
+```
+
+webサーバを立ち上げておくと、動作確認しながら開発できる  
+ソースコードの更新を検知し、自動でビルドし直してくれて、ブラウザも再読み込みしてくれて便利
+
+```
+yarn webpack-dev-server
+```
+
+
+localhost:8080 でアクセスしてみると、index.pugで書いた内容とapp.jsxで書いたreact処理が表示されてるハズ
+
+
+### スクリプトとして登録
 
 ```
 vi package.json
@@ -175,19 +192,9 @@ vi package.json
   },
   "scripts": {
     "build": "webpack"
+    "server": "webpack-dev-server"
   }
 ```
-
-
-### webpack-dev-serverをインストール
-webサーバを立ち上げて動作確認しながら開発できる  
-ソースコードの更新を検知し、自動でビルドし直してくれて、ブラウザも再読み込みしてくれて便利
-
-```
-yarn add -D webpack-dev-server
-```
-
-localhost:8080 でアクセスしてみると、index.pugで書いた内容とapp.jsxで書いたreact処理が表示されてるハズ
 
 
 
@@ -244,20 +251,10 @@ import ExtractTextPlugin from "extract-text-webpack-plugin" // 追記
 
 ### 確認
 ```
-yarn webpack
+yarn build
 ```
 
 public/css/styles.cssが生成されてれば成功
-
-```
-vi package.json
-
-  "scripts": {
-    "build": "webpack"
-    // 下記を追記
-    "server": "webpack-dev-server"
-  }
-```
 
 ```
 yarn server
