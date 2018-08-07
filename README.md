@@ -8,6 +8,11 @@ React + Stylus + Pug を使った開発環境をさっと用意したいので�
 ```
 git clone https://github.com/0ceanMoo/react_pug_stylus_dev.git
 yarn install
+```
+
+で、インストールが完了し
+
+```
 yarn server
 ```
 
